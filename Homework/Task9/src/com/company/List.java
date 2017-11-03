@@ -8,7 +8,7 @@ public interface List {
     void delete(int numberIndex);
     void deleteForNumber(int number);
     int findFotIndex(int numberIndex);
-    void expandAnArray();// найти по индексу
+    void expandAnArray();
     Iterator iterator();
     int size();
 }
