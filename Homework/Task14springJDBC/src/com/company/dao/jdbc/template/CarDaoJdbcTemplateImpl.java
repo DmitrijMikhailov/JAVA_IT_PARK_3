@@ -69,7 +69,7 @@ public class CarDaoJdbcTemplateImpl implements CarDao{
     }
 
     @Override
-    public void save(final Car model) {
+    public void save(Car model) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         template.update(
                 new PreparedStatementCreator() {
@@ -93,7 +93,7 @@ public class CarDaoJdbcTemplateImpl implements CarDao{
     }
 
     @Override
-    public void update(final Car model) {
+    public void update(Car model) {
         if (template.query(SQL_CHECK_IS_EXIST, carCheckRowMapper, model.getId()).isEmpty()) {
             System.out.println("Машины с таким id не существует");
         } else {
@@ -115,7 +115,7 @@ public class CarDaoJdbcTemplateImpl implements CarDao{
     }
 
     @Override
-    public void delete(final int id) {
+    public void delete(int id) {
         if (template.query(SQL_CHECK_IS_EXIST, carCheckRowMapper, id).isEmpty()) {
             System.out.println("Машины с таким id не существует");
         } else {

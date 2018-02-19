@@ -5,14 +5,14 @@ public class Car {
     private String number;
     private String color;
     private String model;
-    private int ownerId;
+    private Human owner;
 
-    public Car(int id, String number, String color, String model, int ownerId) {
+    public Car(int id, String number, String color, String model, Human owner) {
         this.id = id;
         this.number = number;
         this.color = color;
         this.model = model;
-        this.ownerId = ownerId;
+        this.owner = owner;
     }
 
     public int getId() {
@@ -47,22 +47,11 @@ public class Car {
         this.model = model;
     }
 
-    public int getOwnerId() {
-        return ownerId;
+    public Human getOwner() {
+        return owner;
     }
 
-    public void setOwnerId(int ownerId) {
-        this.ownerId = ownerId;
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "id=" + id +
-                ", number='" + number + '\'' +
-                ", color='" + color + '\'' +
-                ", model='" + model + '\'' +
-                ", ownerId=" + ownerId +
-                '}';
+    public void setOwner(Human owner) {
+        this.owner = owner;
     }
 }
